@@ -1,10 +1,10 @@
+const App = () => {
+	return (
+		<>
+			<p className=''>Hello World</p>
+			<h1 className=''>Hello</h1>
+		</>
+	);
+};
 
-function App() {
-  return (
-    <>
-      <p className="demo">Hello World</p>
-    </>
-  )
-}
-
-export default App
+export default App;
