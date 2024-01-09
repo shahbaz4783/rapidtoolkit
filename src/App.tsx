@@ -1,9 +1,9 @@
-import { YearProgress } from './app/year-progress/Index';
+import { Home } from "./pages/Home";
 
 const App = () => {
 	return (
 		<>
-			<YearProgress />
+			<Home />
 		</>
 	);
 };
