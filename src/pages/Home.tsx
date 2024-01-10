@@ -1,10 +1,8 @@
-import { Header } from '../common/Header';
 import { Card } from '../components/Card';
 
 export const Home: React.FC = () => {
 	return (
 		<>
-			<Header />
 			<main className='w-11/12 m-auto flex flex-col gap-8 max-w-7xl'>
 				<section>
 					<h1 className='text-xl md:text-4xl text-center font-bold mb-4'>
