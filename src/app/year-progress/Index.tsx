@@ -67,20 +67,35 @@ export const YearProgress: React.FC = () => {
 
 	return (
 		<>
+			<main className='flex flex-col gap-8 w-11/12 m-auto'>
 				<Back />
-			<main className='bg-slate-400 h-80'>
-				<section>
+				<h1 className='text-5xl text-center font-serif italic'>Year Progress</h1>
+				<section className='text-center'>
 					<h1 className='font-extrabold text-7xl text-blue-600'>
 						{currentYear}
 					</h1>
-					<p>{percentageOfYearPassed.toFixed(7)}%</p>
+					<p className='text-xl'>{percentageOfYearPassed.toFixed(7)}%</p>
 				</section>
-				<section>
-					<h1>Time Left</h1>
-					<p>{timeLeft.days} days</p>
-					<p>{timeLeft.hours} hours</p>
-					<p>{timeLeft.minutes} minutes</p>
-					<p>{timeLeft.seconds} seconds</p>
+				<section className='text-center'>
+					<h1 className='text-2xl font-bold mb-6'>Time Left</h1>
+					<article className='grid grid-cols-4 gap-2 text-xl capitalize max-w-3xl m-auto'>
+						<div>
+							<h3>{timeLeft.days >= 2 ? 'days' : 'day'}</h3>
+							<p>{timeLeft.days}</p>
+						</div>
+						<div>
+							<h3>{timeLeft.hours >= 2 ? 'hours' : 'hour'}</h3>
+							<p>{timeLeft.hours}</p>
+						</div>
+						<div>
+							<h3>{timeLeft.minutes >= 2 ? 'minutes' : 'minute'}</h3>
+							<p>{timeLeft.minutes}</p>
+						</div>
+						<div>
+							<h3> {timeLeft.seconds >= 2 ? 'seconds' : 'second'}</h3>
+							<p>{timeLeft.seconds}</p>
+						</div>
+					</article>
 				</section>
 			</main>
 		</>
