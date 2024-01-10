@@ -19,34 +19,42 @@ export const Home: React.FC = () => {
 					<Card
 						heading='Year Progress'
 						para='Check How much year has been progressed'
+						appRoute='/year-progress'
 					/>
 					<Card
 						heading='Year Progress'
 						para='Check How much year has been progressed'
+						appRoute='/year-progress'
 					/>
 					<Card
 						heading='Year Progress'
 						para='Check How much year has been progressed'
+						appRoute='/year-progress'
 					/>
 					<Card
 						heading='Year Progress'
 						para='Check How much year has been progressed'
+						appRoute='/year-progress'
 					/>
 					<Card
 						heading='Year Progress'
 						para='Check How much year has been progressed'
+						appRoute='/year-progress'
 					/>
 					<Card
 						heading='Year Progress'
 						para='Check How much year has been progressed'
+						appRoute='/year-progress'
 					/>
 					<Card
 						heading='Year Progress'
 						para='Check How much year has been progressed'
+						appRoute='/year-progress'
 					/>
 					<Card
 						heading='Year Progress'
 						para='Check How much year has been progressed'
+						appRoute='/year-progress'
 					/>
 				</section>
 			</main>
