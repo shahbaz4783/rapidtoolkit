@@ -8,7 +8,7 @@ interface TimeLeft {
 	seconds: number;
 }
 
-export const YearProgress: React.FC = () => {
+export const YearProgresser: React.FC = () => {
 	const [currentYear, _setCurrentYear] = useState<number>(
 		new Date().getFullYear()
 	);

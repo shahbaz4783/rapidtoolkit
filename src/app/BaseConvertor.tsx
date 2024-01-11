@@ -1,10 +1,11 @@
-import { Back } from '../components/Back';
+import { Main } from "../components/Main";
 
 export const BaseConvertor: React.FC = () => {
 	return (
 		<>
-			<Back />
-			<h1>Base Convertor</h1>
+		<Main title="Base Convertor">
+			<h1>Hello</h1>
+		</Main>
 		</>
 	);
 };
