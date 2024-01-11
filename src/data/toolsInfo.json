@@ -1,0 +1,17 @@
+[
+	{
+		"title": "Year Progress",
+		"info": "Check How much year has been progressed",
+		"appRoute": "/year-progress"
+	},
+	{
+		"title": "Base Convertor",
+		"info": "Convert a Number to Any Base",
+		"appRoute": "/base-convertor"
+	},
+	{
+		"title": "Investment Calculator",
+		"info": "Calculate Your Investment",
+		"appRoute": "/investment-calculator"
+	}
+]

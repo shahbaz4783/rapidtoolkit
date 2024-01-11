@@ -1,4 +1,7 @@
 import { Card } from '../components/Card';
+import toolsInfo from '../data/toolsInfo.json';
+
+console.log(toolsInfo);
 
 export const Home: React.FC = () => {
 	return (
@@ -14,46 +17,14 @@ export const Home: React.FC = () => {
 					</p>
 				</section>
 				<section className='grid gap-4 grid-cols-2 sm:grid-cols-4'>
-					<Card
-						heading='Year Progress'
-						para='Check How much year has been progressed'
-						appRoute='/year-progress'
-					/>
-					<Card
-						heading='Year Progress'
-						para='Check How much year has been progressed'
-						appRoute='/year-progress'
-					/>
-					<Card
-						heading='Year Progress'
-						para='Check How much year has been progressed'
-						appRoute='/year-progress'
-					/>
-					<Card
-						heading='Year Progress'
-						para='Check How much year has been progressed'
-						appRoute='/year-progress'
-					/>
-					<Card
-						heading='Year Progress'
-						para='Check How much year has been progressed'
-						appRoute='/year-progress'
-					/>
-					<Card
-						heading='Year Progress'
-						para='Check How much year has been progressed'
-						appRoute='/year-progress'
-					/>
-					<Card
-						heading='Year Progress'
-						para='Check How much year has been progressed'
-						appRoute='/year-progress'
-					/>
-					<Card
-						heading='Year Progress'
-						para='Check How much year has been progressed'
-						appRoute='/year-progress'
-					/>
+					{toolsInfo.map((item) => (
+						<Card
+							key={item.title}
+							heading={item.title}
+							para={item.info}
+							appRoute={item.appRoute}
+						/>
+					))}
 				</section>
 			</main>
 		</>
