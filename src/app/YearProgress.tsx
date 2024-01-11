@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Back } from '../../components/Back';
+import { Main } from '../components/Main';
 
 interface TimeLeft {
 	days: number;
@@ -67,9 +67,7 @@ export const YearProgress: React.FC = () => {
 
 	return (
 		<>
-			<main className='flex flex-col gap-8 w-11/12 m-auto'>
-				<Back />
-				<h1 className='text-5xl text-center font-serif italic'>Year Progress</h1>
+			<Main title='Year Progress'>
 				<section className='text-center'>
 					<h1 className='font-extrabold text-7xl text-blue-600'>
 						{currentYear}
@@ -97,7 +95,7 @@ export const YearProgress: React.FC = () => {
 						</div>
 					</article>
 				</section>
-			</main>
+			</Main>
 		</>
 	);
 };

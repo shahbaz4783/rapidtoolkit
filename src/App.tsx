@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home";
-import { YearProgress } from "./app/year-progress/Index";
-import { Root } from "./pages/Root";
-import { Error } from "./pages/Error";
-import { BaseConvertor } from './app/base-convertor/Index';
-import { InvestmentCalculator } from "./app/investment-calculator/Index";
+import { YearProgress } from './app/YearProgress';
+import { Root } from './pages/Root';
+import { Error } from './pages/Error';
+import { BaseConvertor } from './app/BaseConvertor';
+import { InvestmentCalculator } from './app/InvestmentCalculator';
 
 const router = createBrowserRouter([
 	{

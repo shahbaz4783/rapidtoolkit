@@ -17,9 +17,9 @@ export const Home: React.FC = () => {
 					</p>
 				</section>
 				<section className='grid gap-4 grid-cols-2 sm:grid-cols-4'>
-					{toolsInfo.map((item) => (
-						<Card
-							key={item.title}
+					{toolsInfo.map((item, index) => (
+            <Card
+							key={index}
 							heading={item.title}
 							para={item.info}
 							appRoute={item.appRoute}
