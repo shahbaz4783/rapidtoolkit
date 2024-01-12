@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Main } from '../components/Main';
-
-interface TimeLeft {
-	days: number;
-	hours: number;
-	minutes: number;
-	seconds: number;
-}
+import {
+	TimeLeft,
+	calculatePercentageOfYearPassed,
+	calculateTimeLeftInYear,
+} from '../utils/time';
 
 export const YearProgresser: React.FC = () => {
 	const [currentYear, _setCurrentYear] = useState<number>(
@@ -23,11 +21,7 @@ export const YearProgresser: React.FC = () => {
 
 	useEffect(() => {
 		const updateProgress = () => {
-			const currentDate = new Date();
-			const startOfYear = new Date(currentYear, 0, 1);
-			const timeElapsed = currentDate.getTime() - startOfYear.getTime();
-			const millisecondsInYear = 1000 * 60 * 60 * 24 * 365.25;
-			const percentage = (timeElapsed / millisecondsInYear) * 100;
+			const percentage = calculatePercentageOfYearPassed(currentYear);
 			setPercentageOfYearPassed(percentage);
 		};
 		const intervalId = setInterval(updateProgress, 100);
@@ -35,31 +29,8 @@ export const YearProgresser: React.FC = () => {
 	}, [currentYear]);
 
 	useEffect(() => {
-		function getTimeLeftInYear(): TimeLeft {
-			const currentDate = new Date();
-			const currentYear = currentDate.getFullYear();
-			const endOfYear = new Date(currentYear + 1, 0, 1);
-			const timeLeftMillis = endOfYear.getTime() - currentDate.getTime();
-
-			const daysLeft = Math.floor(timeLeftMillis / (1000 * 60 * 60 * 24));
-			const hoursLeft = Math.floor(
-				(timeLeftMillis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-			);
-			const minutesLeft = Math.floor(
-				(timeLeftMillis % (1000 * 60 * 60)) / (1000 * 60)
-			);
-			const secondsLeft = Math.floor((timeLeftMillis % (1000 * 60)) / 1000);
-
-			return {
-				days: daysLeft,
-				hours: hoursLeft,
-				minutes: minutesLeft,
-				seconds: secondsLeft,
-			};
-		}
-
 		const intervalId = setInterval(() => {
-			setTimeLeft(getTimeLeftInYear());
+			setTimeLeft(calculateTimeLeftInYear());
 		}, 1000);
 
 		return () => clearInterval(intervalId);
