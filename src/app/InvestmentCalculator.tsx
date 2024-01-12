@@ -1,10 +1,9 @@
-import { Back } from '../components/Back';
+import { Main } from "../components/Main";
 
 export const InvestmentCalculator: React.FC = () => {
 	return (
-		<>
-			<Back />
-			<h1>Investment Calculator</h1>
-		</>
+		<Main title='Investment Calculator'>
+			<section></section>
+		</Main>
 	);
 };
