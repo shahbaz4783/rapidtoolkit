@@ -1,12 +1,6 @@
 import { Link } from 'react-router-dom';
 
-interface Card {
-	heading: string;
-	para: string;
-	appRoute: string;
-}
-
-export const Card: React.FC<Card> = ({ heading, para, appRoute }) => {
+export const Card: React.FC<HomeCard> = ({ heading, para, appRoute }) => {
 	return (
 		<Link
 			to={appRoute}
