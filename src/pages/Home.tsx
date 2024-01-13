@@ -1,8 +1,6 @@
 import { Card } from '../components/Card';
 import toolsInfo from '../data/toolsInfo.json';
 
-console.log(toolsInfo);
-
 export const Home: React.FC = () => {
 	return (
 		<>
