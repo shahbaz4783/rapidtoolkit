@@ -17,7 +17,7 @@ export const InvestmentResult: React.FC<Result> = ({ input }) => {
 	};
 
 	return (
-		<section className=''>
+		<section className='flex-1'>
 			<ListWrapper
 				field='Total Invested'
 				value={formatNumber(result.totalInvestment)}

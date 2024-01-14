@@ -1,13 +1,13 @@
-import { Main } from "../components/Main";
+import { Main } from '../components/Main';
 import { InvestmentInputField } from '../components/InvestmentInputField';
-import { useState } from "react";
-import { InvestmentResult } from "../components/InvestmentResult";
+import { useState } from 'react';
+import { InvestmentResult } from '../components/InvestmentResult';
 
 export const InvestmentCalculator: React.FC = () => {
 	const [userInput, setUserInput] = useState({
-		monthlySIP: 1000,
-		ROI: 12,
-		duration: 2,
+		monthlySIP: 5000,
+		ROI: 8,
+		duration: 5,
 	});
 
 	const handleChange = (inputIdentifier: string, newValue: number) => {
@@ -20,9 +20,12 @@ export const InvestmentCalculator: React.FC = () => {
 	};
 	return (
 		<Main title='Investment Calculator'>
-			<div className="md:flex gap-10 justify-center border">
-			<InvestmentInputField userInput={userInput} onChangeProp={handleChange} />
-			<InvestmentResult input={userInput} />
+			<div className='flex flex-col md:flex-row gap-10 justify-between'>
+				<InvestmentInputField
+					userInput={userInput}
+					onChangeProp={handleChange}
+				/>
+				<InvestmentResult input={userInput} />
 			</div>
 		</Main>
 	);
