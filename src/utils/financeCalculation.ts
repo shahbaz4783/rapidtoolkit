@@ -17,3 +17,15 @@ export const calculateInvestmentValue = (
 		totalValue,
 	};
 };
+
+
+export const totalReturns = (gain: number, principal: number): number => {
+	if (principal !== 0) {
+		const returns = (gain / principal) * 100;
+		console.log('Returns:', returns);
+		return returns;
+	} else {
+		console.log('Principal is zero. Unable to calculate returns.');
+		return 0;
+	}
+};
