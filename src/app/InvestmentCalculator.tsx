@@ -20,7 +20,7 @@ export const InvestmentCalculator: React.FC = () => {
 	};
 	return (
 		<Main title='Investment Calculator'>
-			<div className='md:w-4/5 m-auto flex flex-col md:flex-row gap-10 justify-between'>
+			<div className='md:w-4/5 md:m-auto flex flex-col md:flex-row gap-10 justify-between'>
 				<InvestmentInputField
 					userInput={userInput}
 					onChangeProp={handleChange}

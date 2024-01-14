@@ -5,12 +5,22 @@ export const InvestmentInputField: React.FC<InputFieldFunction> = ({
 	onChangeProp,
 }) => {
 	return (
-		<section className='md:w-4/12 flex flex-col gap-5 justify-center flex-1 border-4 border-gray-200 rounded-xl p-6'>
-			<article className='flex justify-between items-center'>
+		<section className='md:w-4/12 grid grid-cols-1 md:grid-cols-2 gap-5 justify-center flex-1 border-4 border-slate-300 rounded-xl p-6'>
+			<article className='flex flex-col'>
+				<label className='flex-1' htmlFor='sip'>
+					Investment Type
+				</label>
+				<div className='flex items-center flex-1 px-1 border border-gray-200 rounded-md'>
+					<span>SIP</span>
+					<span>Lumpsum</span>
+				</div>
+			</article>
+
+			<article className='flex flex-col'>
 				<label className='flex-1' htmlFor='sip'>
 					Monthly SIP
 				</label>
-				<div className='flex items-center flex-1 px-1 border border-gray-200 rounded-md'>
+				<div className='flex items-center flex-1 px-4 border border-gray-200 rounded-md'>
 					<span>₹</span>
 					<NumInput
 						value={userInput.monthlySIP}
@@ -19,7 +29,8 @@ export const InvestmentInputField: React.FC<InputFieldFunction> = ({
 					/>
 				</div>
 			</article>
-			<article className='flex justify-between items-center'>
+
+			<article className='flex flex-col'>
 				<label className='flex-1' htmlFor='roi'>
 					Expected Return (p.a)
 				</label>
@@ -32,7 +43,8 @@ export const InvestmentInputField: React.FC<InputFieldFunction> = ({
 					<span>%</span>
 				</div>
 			</article>
-			<article className='flex justify-between items-center'>
+
+			<article className='flex flex-col'>
 				<label className='flex-1' htmlFor='duration'>
 					Duration
 				</label>
