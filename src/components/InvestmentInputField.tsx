@@ -5,7 +5,7 @@ export const InvestmentInputField: React.FC<InputFieldFunction> = ({
 	onChangeProp,
 }) => {
 	return (
-		<section className='md:w-4/12 flex flex-col gap-5 justify-center flex-1'>
+		<section className='md:w-4/12 flex flex-col gap-5 justify-center flex-1 border-4 border-gray-200 rounded-xl p-6'>
 			<article className='flex justify-between items-center'>
 				<label className='flex-1' htmlFor='sip'>
 					Monthly SIP

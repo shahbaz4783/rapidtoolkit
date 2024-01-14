@@ -1,9 +1,11 @@
 import { Card } from '../components/Card';
 import toolsInfo from '../data/toolsInfo.json';
+import { Header } from '../common/Header';
 
 export const Home: React.FC = () => {
 	return (
 		<>
+			<Header />
 			<main className='w-11/12 m-auto flex flex-col gap-8 max-w-7xl'>
 				<section>
 					<h1 className='text-xl md:text-4xl text-center font-bold mb-4'>
@@ -16,7 +18,7 @@ export const Home: React.FC = () => {
 				</section>
 				<section className='grid gap-4 grid-cols-2 sm:grid-cols-4'>
 					{toolsInfo.map((item, index) => (
-            <Card
+						<Card
 							key={index}
 							heading={item.title}
 							para={item.info}
