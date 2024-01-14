@@ -20,7 +20,7 @@ export const InvestmentCalculator: React.FC = () => {
 	};
 	return (
 		<Main title='Investment Calculator'>
-			<InvestmentInputField userInput={userInput} onChange={handleChange} />
+			<InvestmentInputField userInput={userInput} onChangeProp={handleChange} />
 			<InvestmentResult input={userInput} />
 		</Main>
 	);

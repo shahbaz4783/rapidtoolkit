@@ -1,4 +1,4 @@
 interface Button {
 	title: string;
-	onClick?: () => void;
+	onClick?: (React.MouseEventHandler<HTMLButtonElement>);
 }

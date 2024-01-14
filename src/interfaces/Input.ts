@@ -2,9 +2,14 @@ interface Input {
 	placeholder?: string;
 	value?: number;
 	id?: string;
-	onChange?: () => void;
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-interface InputField {
-	onChange?: () => void;
+// interface InputFieldFunction {
+// 	onChangeProp?: (field: string, value: string) => void;
+// }
+
+interface InputFieldFunction {
+	onChangeProp?: any;
+	userInput?: any;
 }
