@@ -20,8 +20,10 @@ export const InvestmentCalculator: React.FC = () => {
 	};
 	return (
 		<Main title='Investment Calculator'>
+			<div className="md:flex gap-10 justify-center border">
 			<InvestmentInputField userInput={userInput} onChangeProp={handleChange} />
 			<InvestmentResult input={userInput} />
+			</div>
 		</Main>
 	);
 };

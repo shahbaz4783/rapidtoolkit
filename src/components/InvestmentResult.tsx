@@ -1,4 +1,5 @@
 import { calculateInvestmentValue } from "../utils/financeCalculation";
+import { ListWrapper } from "./ListWrapper";
 
 export const InvestmentResult: React.FC<Result> = ({ input }) => {
 
@@ -16,19 +17,19 @@ export const InvestmentResult: React.FC<Result> = ({ input }) => {
 	};
 
 	return (
-		<section>
-			<div>
-				<h2>Invested Amount:</h2>
-				<p>{formatNumber(result.totalInvestment)}</p>
-			</div>
-			<div>
-				<h2>Est. Returns:</h2>
-				<p>{formatNumber(result.totalGain)}</p>
-			</div>
-			<div>
-				<h2>Total Value:</h2>
-				<p>{formatNumber(result.totalValue)}</p>
-			</div>
+		<section className=''>
+			<ListWrapper
+				field='Total Invested'
+				value={formatNumber(result.totalInvestment)}
+			/>
+			<ListWrapper
+				field='Est. Returns'
+				value={formatNumber(result.totalGain)}
+			/>
+			<ListWrapper
+				field='Total Value:'
+				value={formatNumber(result.totalValue)}
+			/>
 		</section>
 	);
 };
