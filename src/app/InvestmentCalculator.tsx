@@ -6,7 +6,7 @@ import { InvestmentResult } from '../components/InvestmentResult';
 export const InvestmentCalculator: React.FC = () => {
 	const [userInput, setUserInput] = useState({
 		monthlySIP: 5000,
-		ROI: 8,
+		ROI: 12,
 		duration: 5,
 	});
 
