@@ -10,6 +10,13 @@ export const InvestmentCalculator: React.FC = () => {
 		duration: 5,
 	});
 
+	const [investmentType, setinvestmentType] = useState('SIP');
+
+	const investmantToggle = (type: string) => {
+		setinvestmentType(type);
+	};
+
+
 	const handleChange = (inputIdentifier: string, newValue: number) => {
 		setUserInput((prevUserInput) => {
 			return {
@@ -24,8 +31,10 @@ export const InvestmentCalculator: React.FC = () => {
 				<InvestmentInputField
 					userInput={userInput}
 					onChangeProp={handleChange}
+					investmentType={investmentType}
+					onInvestmentTypeChange={investmantToggle}
 				/>
-				<InvestmentResult input={userInput} />
+				<InvestmentResult input={userInput} investmentType={investmentType} />
 			</div>
 		</Main>
 	);

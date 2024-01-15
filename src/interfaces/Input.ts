@@ -12,4 +12,6 @@ interface Input {
 interface InputFieldFunction {
 	onChangeProp?: any;
 	userInput?: any;
+	investmentType: string;
+	onInvestmentTypeChange: (type: string) => void;
 }

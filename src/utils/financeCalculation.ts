@@ -22,10 +22,32 @@ export const calculateInvestmentValue = (
 export const totalReturns = (gain: number, principal: number): number => {
 	if (principal !== 0) {
 		const returns = (gain / principal) * 100;
-		console.log('Returns:', returns);
 		return returns;
 	} else {
-		console.log('Principal is zero. Unable to calculate returns.');
 		return 0;
 	}
+};
+
+export const calculateLumpsum = (
+	principal: number,
+	rate: number,
+	time: number,
+	compoundingFrequency: number
+): {
+	totalGain: number;
+	totalValue: number;
+	totalInvestment: number;
+} => {
+	const n = compoundingFrequency;
+	const r = rate / 100;
+
+	const totalInvestment = principal;
+	const totalValue = principal * Math.pow(1 + r / n, n * time);
+	const totalGain = totalValue - principal;
+
+	return {
+		totalGain,
+		totalValue,
+		totalInvestment,
+	};
 };

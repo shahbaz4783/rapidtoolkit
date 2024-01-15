@@ -6,6 +6,7 @@ interface HomeCard {
 
 interface Result {
 	input: any;
+	investmentType: string;
 }
 
 interface InvestmentResult {
