@@ -7,3 +7,12 @@ interface ListWrapper {
   field: string
   value: string
 }
+
+interface InputWrapper {
+	children: React.ReactNode;
+}
+
+interface LabelProps {
+	title: string;
+	htmlFor: string;
+}
