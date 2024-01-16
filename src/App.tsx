@@ -5,6 +5,7 @@ import { Root } from './pages/Root';
 import { Error } from './pages/Error';
 import { BaseConvertor } from './app/BaseConvertor';
 import { InvestmentCalculator } from './app/InvestmentCalculator';
+import { GoalManager } from "./app/GoalManager";
 
 const router = createBrowserRouter([
 	{
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
 			{ path: '/year-progress', element: <YearProgresser /> },
 			{ path: '/base-convertor', element: <BaseConvertor /> },
 			{ path: '/investment-calculator', element: <InvestmentCalculator /> },
+			{ path: '/goal-manager', element: <GoalManager /> },
 		],
 	},
 ]);

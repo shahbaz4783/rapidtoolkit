@@ -13,5 +13,10 @@
 		"title": "Investment Calculator",
 		"info": "Calculate Your Investment",
 		"appRoute": "/investment-calculator"
+	},
+	{
+		"title": "Goal Manager",
+		"info": "Manage you goals effortlessly",
+		"appRoute": "/goal-manager"
 	}
 ]
