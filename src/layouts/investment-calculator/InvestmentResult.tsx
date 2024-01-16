@@ -1,9 +1,12 @@
-import { calculateInvestmentValue } from "../utils/financeCalculation";
-import { ListWrapper } from "./ListWrapper";
-import { totalReturns } from "../utils/financeCalculation";
-import { calculateLumpsum } from "../utils/financeCalculation";
+import { calculateInvestmentValue } from '../../utils/financeCalculation';
+import { ListWrapper } from '../../components/wrapper/ListWrapper';
+import { totalReturns } from '../../utils/financeCalculation';
+import { calculateLumpsum } from '../../utils/financeCalculation';
 
-export const InvestmentResult: React.FC<Result> = ({ input, investmentType }) => {
+export const InvestmentResult: React.FC<Result> = ({
+	input,
+	investmentType,
+}) => {
 	const result = calculateInvestmentValue(
 		input.monthlySIP,
 		input.ROI,
@@ -23,7 +26,7 @@ export const InvestmentResult: React.FC<Result> = ({ input, investmentType }) =>
 		lumpumResult.totalGain,
 		lumpumResult.totalInvestment
 	);
-  console.log(lumpumReturns);
+	console.log(lumpumReturns);
 
 	const formatNumber = (value: number) => {
 		return new Intl.NumberFormat('en-IN', {

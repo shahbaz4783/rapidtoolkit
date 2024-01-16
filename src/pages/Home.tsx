@@ -1,6 +1,6 @@
-import { Card } from '../components/Card';
+import { Card } from '../components/ui/Card';
 import toolsInfo from '../data/toolsInfo.json';
-import { Header } from '../common/Header';
+import { Header } from '../layouts/Header';
 
 export const Home: React.FC = () => {
 	return (

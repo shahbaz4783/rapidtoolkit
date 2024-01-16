@@ -1,6 +1,6 @@
-import { Button } from '../components/Button';
-import { Main } from '../components/Main';
-import { NumInput } from '../components/NumInput';
+import { Button } from '../components/ui/Button';
+import { Main } from '../components/wrapper/Main';
+import { NumInput } from '../components/ui/NumInput';
 
 export const BaseConvertor: React.FC = () => {
 	return (

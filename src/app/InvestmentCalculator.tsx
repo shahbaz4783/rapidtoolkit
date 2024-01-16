@@ -1,7 +1,7 @@
-import { Main } from '../components/Main';
-import { InvestmentInputField } from '../components/InvestmentInputField';
+import { Main } from '../components/wrapper/Main';
+import { InvestmentInputField } from '../layouts/investment-calculator/InvestmentInputField';
 import { useState } from 'react';
-import { InvestmentResult } from '../components/InvestmentResult';
+import { InvestmentResult } from '../layouts/investment-calculator/InvestmentResult';
 
 export const InvestmentCalculator: React.FC = () => {
 	const [userInput, setUserInput] = useState({
@@ -15,7 +15,6 @@ export const InvestmentCalculator: React.FC = () => {
 	const investmantToggle = (type: string) => {
 		setinvestmentType(type);
 	};
-
 
 	const handleChange = (inputIdentifier: string, newValue: number) => {
 		setUserInput((prevUserInput) => {

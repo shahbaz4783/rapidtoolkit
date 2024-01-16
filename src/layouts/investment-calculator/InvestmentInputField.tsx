@@ -1,8 +1,8 @@
-import { NumInput } from './NumInput';
-import { Switch } from './Switch';
-import { InputWrapper } from './InputWrapper';
-import { SwitchWrapper } from './SwitchWrapper';
-import { Label } from './Label';
+import { NumInput } from '../../components/ui/NumInput';
+import { Switch } from '../../components/ui/Switch';
+import { InputWrapper } from '../../components/wrapper/InputWrapper';
+import { SwitchWrapper } from '../../components/wrapper/SwitchWrapper';
+import { Label } from '../../components/ui/Label';
 
 export const InvestmentInputField: React.FC<InputFieldFunction> = ({
 	userInput,

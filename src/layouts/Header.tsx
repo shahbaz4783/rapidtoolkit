@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/favicon.png';
-import { Button } from '../components/Button';
+import { Button } from '../components/ui/Button';
 
 export const Header = () => {
 	return (
