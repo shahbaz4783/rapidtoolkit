@@ -1,4 +1,4 @@
-import { NumInput } from '../../components/ui/NumInput';
+import { Input } from '../../components/ui/Input';
 import { Switch } from '../../components/ui/Switch';
 import { InputWrapper } from '../../components/wrapper/InputWrapper';
 import { SwitchWrapper } from '../../components/wrapper/SwitchWrapper';
@@ -35,7 +35,8 @@ export const InvestmentInputField: React.FC<InputFieldFunction> = ({
 				/>
 				<InputWrapper>
 					<span className='bg-stone-300 text-blue-800 p-3'>₹</span>
-					<NumInput
+					<Input
+						type='number'
 						value={userInput.monthlySIP}
 						onChange={(e) => onChangeProp('monthlySIP', e.target.value)}
 						id='sip'
@@ -46,7 +47,8 @@ export const InvestmentInputField: React.FC<InputFieldFunction> = ({
 			<article className=''>
 				<Label htmlFor='roi' title='Expected Return (p.a)' />
 				<InputWrapper>
-					<NumInput
+					<Input
+						type='number'
 						value={userInput.ROI}
 						onChange={(e) => onChangeProp('ROI', e.target.value)}
 						id='roi'
@@ -58,7 +60,8 @@ export const InvestmentInputField: React.FC<InputFieldFunction> = ({
 			<article className=''>
 				<Label htmlFor='duration' title='Duration' />
 				<InputWrapper>
-					<NumInput
+					<Input
+						type='number'
 						value={userInput.duration}
 						onChange={(e) => onChangeProp('duration', e.target.value)}
 						id='duration'
