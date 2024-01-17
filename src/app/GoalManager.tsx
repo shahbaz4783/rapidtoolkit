@@ -21,13 +21,15 @@ export const GoalManager = () => {
 
   const handleAddGoal = (goalData: any) => {
 		setGoalsState((prevState: any) => {
+      const goalId = Math.random()
 			const newGoal = {
 				...goalData,
-				id: Math.random(),
+				id: goalId,
 			};
 
 			return {
 				...prevState,
+        selectedGoalId: undefined,
 				goals: [...prevState.goals, newGoal],
 			};
 		});
@@ -46,7 +48,7 @@ export const GoalManager = () => {
 	return (
 		<Main title='Goal Manager'>
 			<div className='flex h-full gap-2'>
-				<SideBar onAddGoal={handleStartAddGoal} />
+				<SideBar goals={goalsState.goals} onAddGoal={handleStartAddGoal} />
 				{content}
 			</div>
 		</Main>
