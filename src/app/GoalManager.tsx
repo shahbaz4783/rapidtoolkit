@@ -19,6 +19,15 @@ export const GoalManager = () => {
 		});
 	};
 
+	const handleCancelAddGoal = () => {
+		setGoalsState((prevState: any) => {
+			return {
+				...prevState,
+				selectedGoalId: undefined,
+			};
+		});
+	};
+
   const handleAddGoal = (goalData: any) => {
 		setGoalsState((prevState: any) => {
       const goalId = Math.random()
@@ -42,12 +51,12 @@ export const GoalManager = () => {
 	if (goalsState.selectedGoalId === undefined) {
 		content = <NoneSelection onAddGoal={handleStartAddGoal} />;
 	} else if (goalsState.selectedGoalId === null) {
-		content = <NewGoal onAdd={handleAddGoal} />;
+		content = <NewGoal onAdd={handleAddGoal} onCancel={handleCancelAddGoal} />;
 	}
 
 	return (
 		<Main title='Goal Manager'>
-			<div className='flex h-full gap-2'>
+			<div className='md:flex md:h-full gap-2'>
 				<SideBar goals={goalsState.goals} onAddGoal={handleStartAddGoal} />
 				{content}
 			</div>

@@ -6,7 +6,7 @@ export const SideBar: React.FC<{ onAddGoal: () => void; goals: any }> = ({
 }) => {
 	console.log('console', goals);
 	return (
-		<aside className='flex flex-col items-start p-4 h-full md:w-1/4 bg-gray-600'>
+		<aside className='flex flex-col items-start p-4 md:h-full md:w-1/4 bg-gray-600'>
 			<div className='flex flex-col gap-2'>
 			<h2 className='text-2xl text-gray-50'>Your Goals</h2>
 			<Button onClick={onAddGoal} title='New Goal' />

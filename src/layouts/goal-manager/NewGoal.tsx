@@ -6,7 +6,10 @@ import { SwitchWrapper } from '../../components/wrapper/SwitchWrapper';
 import { Switch } from '../../components/ui/Switch';
 import { useRef } from 'react';
 
-export const NewGoal: React.FC<{onAdd: any}> = ({ onAdd }) => {
+export const NewGoal: React.FC<{ onAdd: any; onCancel: any }> = ({
+	onAdd,
+	onCancel,
+}) => {
 	const titleRef = useRef<HTMLInputElement | null>(null);
 	const dueRef = useRef<HTMLInputElement | null>(null);
 	const descriptionRef = useRef<HTMLTextAreaElement | null>(null);
@@ -44,7 +47,7 @@ export const NewGoal: React.FC<{onAdd: any}> = ({ onAdd }) => {
 			</div>
 			<SwitchWrapper>
 				<Switch onClick={handleSave} title='Add' />
-				<Switch title='Cancel' />
+				<Switch onClick={onCancel} title='Cancel' />
 			</SwitchWrapper>
 		</dialog>
 	);
