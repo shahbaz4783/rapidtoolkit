@@ -1,4 +1,4 @@
-interface Input {
+interface Input extends React.InputHTMLAttributes<HTMLInputElement> {
 	placeholder?: string;
 	value?: number;
 	id?: string;
@@ -6,15 +6,10 @@ interface Input {
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-interface Textarea {
-	children: React.ReactNode;
+interface Textarea extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 	cols: number;
 	rows: number;
 }
-
-// interface InputFieldFunction {
-// 	onChangeProp?: (field: string, value: string) => void;
-// }
 
 interface InputFieldFunction {
 	onChangeProp?: any;

@@ -19,14 +19,30 @@ export const GoalManager = () => {
 		});
 	};
 
+  const handleAddGoal = (goalData: any) => {
+		setGoalsState((prevState: any) => {
+			const newGoal = {
+				...goalData,
+				id: Math.random(),
+			};
+
+			return {
+				...prevState,
+				goals: [...prevState.goals, newGoal],
+			};
+		});
+	};
+
+  console.log(goalsState.goals);
+
 	let content;
 
 	if (goalsState.selectedGoalId === undefined) {
 		content = <NoneSelection onAddGoal={handleStartAddGoal} />;
 	} else if (goalsState.selectedGoalId === null) {
-		content = <NewGoal />;
+		content = <NewGoal onAdd={handleAddGoal} />;
 	}
-  
+
 	return (
 		<Main title='Goal Manager'>
 			<div className='flex h-full gap-2'>
