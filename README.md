@@ -4,11 +4,11 @@ Rapid Toolkit is a collection of tools designed to be useful in day-to-day life,
 
 ## Table of Contents
 
-- [Features](#features)
-- [Installation](#installation)
-- [Available Tools](#available-tools)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
+
+- [Rapid Toolkit](#rapid-toolkit)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Available](#available)
 
 ## Features
 
@@ -16,3 +16,4 @@ Rapid Toolkit is a collection of tools designed to be useful in day-to-day life,
 - Responsive and user-friendly UI built with React and Tailwind CSS.
 - Written in TypeScript for enhanced code quality and maintainability.
 
+## Available

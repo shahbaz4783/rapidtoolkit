@@ -2,7 +2,7 @@ interface Input extends React.InputHTMLAttributes<HTMLInputElement> {
 	placeholder?: string;
 	value?: number;
 	id?: string;
-	type: string;
+	type?: string;
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
