@@ -4,18 +4,18 @@ import { useState, useRef } from 'react';
 import { BaseOptions } from "./BaseOptions";
 
 export const Form = () => {
-	const [fromBase, setfromBase] = useState(10);
-	const [toBase, settoBase] = useState(16);
+	const [fromBase, setfromBase] = useState<number>(10);
+	const [toBase, settoBase] = useState<number>(16);
 	const [enteredNum, setEnteredNum] = useState('');
-	
+
 	const number = useRef<HTMLInputElement | null>(null);
 
-	const handleFromOption = (event: any) => {
-		setfromBase(event.target.value);
+	const handleFromOption = (event: React.ChangeEvent<HTMLSelectElement>) => {
+		setfromBase(parseInt(event.target.value));
 	};
 
-	const handleToOption = (event: any) => {
-		settoBase(event.target.value);
+	const handleToOption = (event: React.ChangeEvent<HTMLSelectElement>) => {
+		settoBase(parseInt(event.target.value));
 	};
 	
 	const handleSubmit = (e: React.FormEvent) => {
@@ -27,15 +27,22 @@ export const Form = () => {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit} className='flex flex-col gap-10 w-2/3'>
+			<form
+				onSubmit={handleSubmit}
+				className='flex flex-col gap-10 w-full md:w-2/3 p-6 rounded-xl border-8'
+			>
 				<BaseOptions
 					onHandleFromProp={handleFromOption}
 					onHandleToProp={handleToOption}
 				/>
-				<Input placeholder='Enter a Number' ref={number} required />
+				<Input placeholder='Enter a number' ref={number} required />
 				<Button title='Convert' />
 			</form>
-			<h1 className='font-serif text-3xl text-center'>{enteredNum}</h1>
+			{enteredNum && (
+				<p className='font-mono text-3xl text-center w-full overflow-scroll bg-gray-100 text-blue-800 p-4 md:w-2/3 rounded-lg'>
+					{enteredNum}
+				</p>
+			)}
 		</>
 	);
 };
