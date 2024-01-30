@@ -5,6 +5,7 @@ import { BaseConvertor } from './app/BaseConvertor';
 import { Error } from './pages/Error';
 import { Root } from './pages/Root';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { TempConvertor } from "./app/TempConvertor";
 
 const router = createBrowserRouter([
 	{
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
 			{ path: '/year-progress', element: <YearProgresser /> },
 			{ path: '/base-convertor', element: <BaseConvertor /> },
 			{ path: '/investment-calculator', element: <InvestmentCalculator /> },
+			{ path: '/temperature-convertor', element: <TempConvertor /> },
 		],
 	},
 ]);

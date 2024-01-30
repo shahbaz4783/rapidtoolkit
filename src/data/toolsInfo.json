@@ -13,5 +13,10 @@
 		"title": "Investment Calculator",
 		"info": "Calculate Your Investment",
 		"appRoute": "/investment-calculator"
+	},
+	{
+		"title": "Temperature Convertor",
+		"info": "Convert Temperature between kelvin celcius and farenheit",
+		"appRoute": "/temperature-convertor"
 	}
 ]
