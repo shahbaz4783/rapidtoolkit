@@ -18,5 +18,10 @@
 		"title": "Temperature Convertor",
 		"info": "Convert Temperature between kelvin celcius and farenheit",
 		"appRoute": "/temperature-convertor"
+	},
+	{
+		"title": "Age Calculator",
+		"info": "Calculate exact age",
+		"appRoute": "/age-calculator"
 	}
 ]

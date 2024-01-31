@@ -6,6 +6,7 @@ import { Error } from './pages/Error';
 import { Root } from './pages/Root';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { TempConvertor } from "./app/TempConvertor";
+import { AgeCalculator } from "./app/AgeCalculator";
 
 const router = createBrowserRouter([
 	{
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
 			{ path: '/base-convertor', element: <BaseConvertor /> },
 			{ path: '/investment-calculator', element: <InvestmentCalculator /> },
 			{ path: '/temperature-convertor', element: <TempConvertor /> },
+			{ path: '/age-calculator', element: <AgeCalculator /> },
 		],
 	},
 ]);
