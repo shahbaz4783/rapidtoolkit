@@ -1,6 +1,8 @@
 import { Input } from '../../components/ui/Input';
 import { Label } from '../../components/ui/Label';
 import { useState } from 'react';
+import { BirthDatesCard } from './BirthDatesCard';
+import { getCurrentDate } from '../../utils/time';
 
 export const DOBPicker = () => {
 	const [age, setAge] = useState<{
@@ -10,6 +12,7 @@ export const DOBPicker = () => {
 	} | null>(null);
 
 	const [wishes, setWishes] = useState(false);
+	const [daysLeft, setDaysLeft] = useState<number | null>(null);
 
 	const dateHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setWishes(false);
@@ -38,46 +41,35 @@ export const DOBPicker = () => {
 			setWishes(true);
 		}
 
+		const nextBirthday = new Date(
+			today.getFullYear() + (birthDate.getMonth() >= today.getMonth() ? 0 : 1),
+			birthDate.getMonth(),
+			birthDate.getDate()
+		);
+
+		const daysLeftUntilNextBirthday = Math.floor(
+			(nextBirthday.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+		);
+
+		setDaysLeft(daysLeftUntilNextBirthday);
 		setAge({ years, months, days });
 	};
 
 	return (
 		<>
-			<div className='flex flex-col border'>
+			<div className='flex flex-col rounded-xl p-4 border-4 w-full gap-3 md:w-1/2'>
 				<Label htmlFor='date' title='Select Date of Birth' />
-				<Input type='date' id='date' required onChange={dateHandler} />
+				<Input
+					type='date'
+					id='date'
+					required
+					onChange={dateHandler}
+					max={getCurrentDate()}
+				/>
 			</div>
-			<article>
-				{wishes && (
-					<p>
-						It's your birthday, you turned {age?.years}{' '}
-						{age?.years === 1 ? 'year' : 'years'} today
-					</p>
-				)}
-				{age !== null && (
-					<p>
-						Your are{' '}
-						{age.years > 0 && (
-							<p>
-								{age.years} {age.years > 1 ? 'years' : 'year'}
-							</p>
-						)}
-						{age.months > 0 && (
-							<>
-								{' '}
-								{age.months} {age.months > 1 ? 'months' : 'month'}
-							</>
-						)}
-						{age.days > 0 && (
-							<>
-								{' '}
-								{age.days} {age.days > 1 ? 'days' : 'day'}
-							</>
-						)}{' '}
-						old
-					</p>
-				)}
-			</article>
+			{age !== null && (
+				<BirthDatesCard age={age} wishes={wishes} daysLeft={daysLeft} />
+			)}
 		</>
 	);
 };
