@@ -41,17 +41,36 @@ export const BirthDatesCard: FC<BirthDates> = ({ age, wishes, daysLeft }) => {
 
 			{daysLeft !== null && !wishes && (
 				<div className='p-4 bg-zinc-100 rounded-xl mt-4'>
-					<p className='text-lg text-sky-600 font-mono'>
-						<span className='font-bold text-xl'> {daysLeft} </span> days left
-						until your next birthday!
-					</p>
+					{daysLeft === 0 ? (
+						<>
+							<p className='text-lg text-sky-600 font-mono'>
+								Happy Birthday in advance!
+							</p>
+							<p className='text-lg text-sky-600 font-mono'>
+								You're about to turn {age.years + 1}!
+							</p>
+						</>
+					) : (
+						<p className='text-lg text-sky-600 font-mono'>
+							<span className='font-bold text-xl'> {daysLeft + 1} </span> days
+							left until your next birthday!
+						</p>
+					)}
 				</div>
 			)}
 			{wishes && (
 				<div className='p-4 bg-zinc-100 rounded-xl mt-4'>
-					<p className='text-lg text-sky-600 font-mono'>
-						Its Your birthday! You turned {age?.years} years today!
-					</p>
+					{age.years === 0 ? (
+						<p className='text-lg text-sky-600 font-mono'>
+							Welcome to the world! Happy Birthday on your very first day of
+							a remarkable journey!
+						</p>
+					) : (
+						<p className='text-lg text-sky-600 font-mono'>
+							Cheers to {age?.years} {age?.years === 1 ? 'year' : 'years'}!
+							Happy Birthday, may this year bring joy and success!
+						</p>
+					)}
 				</div>
 			)}
 		</section>
